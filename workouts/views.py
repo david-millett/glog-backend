@@ -51,3 +51,17 @@ class RetrieveUpdateDestroyWorkoutView(APIView):
         except Exception as e:
             print(e)
             return Response({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    # Delete Controller
+    # Route: DELETE /workouts/:pk/
+    def delete(self, request, pk):
+        workout = self.get_workout(pk)
+        try:
+            workout.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Exception as e:
+            print(e)
+            return Response({ 'message':'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    # Update Controller
+    # Route PUT /workouts/:pk/
