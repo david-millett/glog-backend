@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.exceptions import NotFound
 from rest_framework import status
 from .serializers import ExerciseSerializer
 
@@ -31,17 +32,34 @@ class ListCreateExerciseView(APIView):
         
 class RetrieveUpdateDestroyExerciseView(APIView):
 
-    # Show Controller
-    # Route: GET /exercises/:pk/
-    def get(self, request, pk):
+    def get_exercise(self, pk):
         try:
-            exercise = Exercise.objects.get(pk=pk)
-            seralizer = ExerciseSerializer(exercise)
-            return Response(seralizer.data)
+            return Exercise.objects.get(pk=pk)
         except Exercise.DoesNotExist as e:
             print('Error type ->', e.__class__.__name__)
             print(e)
-            return Response ({ 'message': 'Exercise does not exist' }, status.HTTP_404_NOT_FOUND)
+            raise NotFound({ 'message': 'Exercise not found' })
+
+    # Show Controller
+    # Route: GET /exercises/:pk/
+    def get(self, request, pk):
+        exercise = self.get_exercise(pk)
+        try:
+            seralizer = ExerciseSerializer(exercise)
+            return Response(seralizer.data)
         except Exception as e:
             print(e)
             return Response ({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    # Delete Controller
+    # Route: DELETE /exercises/:pk/
+    def delete(self, request, pk):
+        exercise = self.get_exercise(pk)
+        try:
+            exercise.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Exception as e:
+            print(e)
+            return Response({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    
