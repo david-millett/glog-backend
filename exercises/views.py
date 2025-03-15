@@ -62,4 +62,16 @@ class RetrieveUpdateDestroyExerciseView(APIView):
             print(e)
             return Response({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-    
+    # Update Controller
+    # Route: PUT /exercises/:pk/
+    def put(self, request, pk):
+        exercise = self.get_exercise(pk)
+        try:
+            serializer = ExerciseSerializer(exercise, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status.HTTP_422_UNPROCESSABLE_ENTITY)
+        except Exception as e:
+            print(e)
+            return Response({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
