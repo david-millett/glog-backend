@@ -36,8 +36,12 @@ class RetrieveUpdateDestroyExerciseView(APIView):
     def get(self, request, pk):
         try:
             exercise = Exercise.objects.get(pk=pk)
-            return Response('HIT SHOW ROUTE')
+            seralizer = ExerciseSerializer(exercise)
+            return Response(seralizer.data)
         except Exercise.DoesNotExist as e:
             print('Error type ->', e.__class__.__name__)
             print(e)
             return Response ({ 'message': 'Exercise does not exist' }, status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            print(e)
+            return Response ({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
