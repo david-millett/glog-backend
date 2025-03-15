@@ -30,3 +30,24 @@ class ListCreateWorkoutView(APIView):
         except Exception as e:
             print(e)
             return Response('An unknown error occurred', status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+class RetrieveUpdateDestroyWorkoutView(APIView):
+
+    def get_workout(self, pk):
+        try:
+            return Workout.objects.get(pk=pk)
+        except Workout.DoesNotExist as e:
+            print('Error type ->', e.__class__.__name__)
+            print(e)
+            raise NotFound({ 'message': 'Workout not found' })
+        
+    # Show Controller
+    # Route: GET /workouts/:pk/
+    def get(self, request, pk):
+        workout = self.get_workout(pk)
+        try:
+            serializer = WorkoutSerializer(workout)
+            return Response(serializer.data)
+        except Exception as e:
+            print(e)
+            return Response({ 'message': 'An unknown error occurred' }, status.HTTP_500_INTERNAL_SERVER_ERROR)
