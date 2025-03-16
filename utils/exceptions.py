@@ -2,7 +2,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import ValidationError, NotFound, PermissionDenied
 
+# Models
 from exercises.models import Exercise
+from workouts.models import Workout
+from routines.models import Routine
 
 def handle_exceptions(func):
     def wrapper(*args, **kwargs):
@@ -10,7 +13,7 @@ def handle_exceptions(func):
             return func(*args, **kwargs)
         except PermissionDenied as e:
             return Response({ 'detail': str(e) }, status.HTTP_403_FORBIDDEN)
-        except (Exercise.DoesNotExist, NotFound) as e:
+        except (Exercise.DoesNotExist, Workout.DoesNotExist, Routine.DoesNotExist, NotFound) as e:
             print(e)
             return Response({ 'detail': str(e) }, status.HTTP_404_NOT_FOUND)
         except ValidationError as e: # If the data is not valid, this is the error

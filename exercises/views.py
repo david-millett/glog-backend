@@ -1,6 +1,5 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import NotFound
 from rest_framework import status
 from .serializers import ExerciseSerializer
 from utils.exceptions import handle_exceptions
@@ -40,6 +39,7 @@ class RetrieveUpdateDestroyExerciseView(APIView):
         
     # Delete Controller
     # Route: DELETE /exercises/:pk/
+    @handle_exceptions
     def delete(self, request, pk):
         exercise = Exercise.objects.get(pk=pk)
         exercise.delete()
@@ -47,6 +47,7 @@ class RetrieveUpdateDestroyExerciseView(APIView):
         
     # Update Controller
     # Route: PUT /exercises/:pk/
+    @handle_exceptions
     def put(self, request, pk):
         exercise = Exercise.objects.get(pk=pk)
         serializer = ExerciseSerializer(exercise, data=request.data, partial=True)
