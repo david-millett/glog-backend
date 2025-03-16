@@ -10,10 +10,10 @@ def handle_exceptions(func):
             return func(*args, **kwargs)
         except PermissionDenied as e:
             return Response({ 'detail': str(e) }, status.HTTP_403_FORBIDDEN)
-        except Exercise.DoesNotExist as e:
+        except (Exercise.DoesNotExist, NotFound) as e:
             print(e)
             return Response({ 'detail': str(e) }, status.HTTP_404_NOT_FOUND)
-        except ValidationError as e:
+        except ValidationError as e: # If the data is not valid, this is the error
             print(e)
             return Response(e.detail, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
