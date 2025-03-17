@@ -8,6 +8,7 @@ at least at first, all data is personal to individual users - added authorisatio
 at every stage, all routes were extensively tested in Postman to ensure they were behaving as intendede
 
 next steps:
+add activities!
 create a set of dummy data
 create relationships between data
 

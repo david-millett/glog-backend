@@ -9,3 +9,11 @@ class Routine(models.Model):
         related_name='created_routines',
         on_delete=models.CASCADE
     )
+    workouts = models.ManyToManyField(
+        to='workouts.Workout',
+        related_name='routines',
+        blank=True
+    )
+
+    def __str__(self):
+        return f'{self.name} (Created {self.created})'
