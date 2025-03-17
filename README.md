@@ -10,3 +10,5 @@ at every stage, all routes were extensively tested in Postman to ensure they wer
 next steps:
 create a set of dummy data
 create relationships between data
+
+wanted to experiment with many-to-many fields - was great to do that. workouts can contain many exercises, which can be included in many workouts. and the same with workouts and routines.
