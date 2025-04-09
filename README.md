@@ -43,5 +43,8 @@ At every stage, all routes were extensively tested in *Postman* to ensure they w
 
 **Next steps:**
 * create relationships between data
-* add activities! research best way to store the workout data within
+* add sessions! research best way to store the workout data within
 * create a set of dummy data
+
+
+Planning the database took a lot of time - I realised that this initial plan would not function the way I desired, as storing data in arrays is not the best for SQL databases. So I did some research, read the documentation for Django, etc... So added some join tables instead
