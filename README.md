@@ -60,4 +60,6 @@ I was glad to really drill this down while developing the backend, as I didn't w
 
 This was also important for the logging aspect of the app to work - I needed to create tables for `workout_logs` and `exercise_logs` to properly preserve and store this data
 
+was important to me to think and plan the database in a structured way that would enable scaling and limit the possibility for errors or difficulties later down the line
+
 Next step - I need to create some more apps and edit the ones that already exist!
