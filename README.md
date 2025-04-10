@@ -58,4 +58,6 @@ Exercises in the workouts - workout_exercises
 The database was quite complex and resulted in much more tables this way - but this was beneficial for consistent storage of the data and improved scalability
 I was glad to really drill this down while developing the backend, as I didn't want to move on to the frontend until the database had been properly organised
 
+This was also important for the logging aspect of the app to work - I needed to create tables for `workout_logs` and `exercise_logs` to properly preserve and store this data
+
 Next step - I need to create some more apps and edit the ones that already exist!
