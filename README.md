@@ -47,4 +47,15 @@ At every stage, all routes were extensively tested in *Postman* to ensure they w
 * create a set of dummy data
 
 
-Planning the database took a lot of time - I realised that this initial plan would not function the way I desired, as storing data in arrays is not the best for SQL databases. So I did some research, read the documentation for Django, etc... So added some join tables instead
+Planning the database took a lot of time - I realised that this initial plan would not function the way I desired, as storing data in arrays does not work for relational SQL databases. So I did some research, read the documentation for Django, etc... used join tables to organise the data instead
+
+Plan
+
+Whole structure - routines
+A day in the routine - workouts
+Exercises in the workouts - workout_exercises
+
+The database was quite complex and resulted in much more tables this way - but this was beneficial for consistent storage of the data and improved scalability
+I was glad to really drill this down while developing the backend, as I didn't want to move on to the frontend until the database had been properly organised
+
+Next step - I need to create some more apps and edit the ones that already exist!
