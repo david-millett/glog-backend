@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers.common import WorkoutLogSerializer
+from .serializers.populated import PopulatedWorkoutLogSerializer
 from utils.exceptions import handle_exceptions
 from rest_framework.permissions import IsAuthenticated
 from utils.permissions import IsOwner
@@ -18,7 +19,7 @@ class ListCreateWorkoutLogView(APIView):
     @handle_exceptions
     def get(self, request):
         workout_logs = WorkoutLog.objects.all()
-        serializer = WorkoutLogSerializer(workout_logs, many=True)
+        serializer = PopulatedWorkoutLogSerializer(workout_logs, many=True)
         return Response(serializer.data)
     
     # Create Controller
@@ -40,7 +41,7 @@ class RetrieveUpdateDestroyWorkoutLogView(APIView):
     def get(self, request, pk):
         workout_log = WorkoutLog.objects.get(pk=pk)
         self.check_object_permissions(request, workout_log)
-        serializer = WorkoutLogSerializer(workout_log)
+        serializer = PopulatedWorkoutLogSerializer(workout_log)
         return Response(serializer.data)
 
     # Delete Controller
