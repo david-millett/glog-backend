@@ -4,7 +4,7 @@ from rest_framework import status
 from .serializers import ExerciseSerializer
 from utils.exceptions import handle_exceptions
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from utils.permissions import IsOwner
+from utils.permissions import IsAdminOrReadOnly
 
 # Model
 from .models import Exercise
@@ -32,7 +32,7 @@ class ListCreateExerciseView(APIView):
         return Response(new_exercise.data, status.HTTP_201_CREATED)
         
 class RetrieveUpdateDestroyExerciseView(APIView):
-    # permission_classes=[IsOwner]
+    permission_classes=[IsAdminOrReadOnly]
 
     # Show Controller
     # Route: GET /exercises/:pk/
@@ -62,3 +62,4 @@ class RetrieveUpdateDestroyExerciseView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    
