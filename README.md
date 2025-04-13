@@ -65,3 +65,5 @@ was important to me to think and plan the database in a structured way that woul
 Next step - I need to create some more apps and edit the ones that already exist!
 
 With my database plan finalised, made changes to the existing models I had made to accommodate this. Then, I created the new ones and made all the required relationships.
+
+Came against an issue with circular error with serializers, so (check logs for wording) separated them into different folders to prevent this. Tested all routes for all apps and populated all fields neede (including reverse populations)
