@@ -2,25 +2,24 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers.common import WorkoutExerciseSerializer
+from .serializers.populated import PopulatedWorkoutExerciseSerializer
 from utils.exceptions import handle_exceptions
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from utils.permissions import IsAdminOrReadOnly
-
-# ! Check permission classes
+from rest_framework.permissions import IsAuthenticated
+from utils.permissions import IsOwner
 
 # Model
 from .models import WorkoutExercise
 
 # Create your views here.
 class ListCreateWorkoutExerciseView(APIView):
-    permission_classes=[IsAuthenticatedOrReadOnly]
+    permission_classes=[IsAuthenticated]
 
     # Index Controller
     # Route: GET /workout_exercises/
     @handle_exceptions
     def get(self, request):
         workout_exercises = WorkoutExercise.objects.all()
-        serializer = WorkoutExerciseSerializer(workout_exercises, many=True)
+        serializer = PopulatedWorkoutExerciseSerializer(workout_exercises, many=True)
         return Response(serializer.data)
     
     # Create Controller
@@ -34,7 +33,7 @@ class ListCreateWorkoutExerciseView(APIView):
         return Response(new_workout_exercise.data, status.HTTP_201_CREATED)
         
 class RetrieveUpdateDestroyWorkoutExerciseView(APIView):
-    permission_classes=[IsAdminOrReadOnly]
+    permission_classes=[IsOwner]
 
     # Show Controller
     # Route: GET /workout_exercises/:pk/
@@ -42,7 +41,7 @@ class RetrieveUpdateDestroyWorkoutExerciseView(APIView):
     def get(self, request, pk):
         workout_exercise = WorkoutExercise.objects.get(pk=pk)
         self.check_object_permissions(request, workout_exercise)
-        seralizer = WorkoutExerciseSerializer(workout_exercise)
+        seralizer = PopulatedWorkoutExerciseSerializer(workout_exercise)
         return Response(seralizer.data)
         
     # Delete Controller
