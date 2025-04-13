@@ -63,3 +63,5 @@ This was also important for the logging aspect of the app to work - I needed to 
 was important to me to think and plan the database in a structured way that would enable scaling and limit the possibility for errors or difficulties later down the line
 
 Next step - I need to create some more apps and edit the ones that already exist!
+
+With my database plan finalised, made changes to the existing models I had made to accommodate this. Then, I created the new ones and made all the required relationships.

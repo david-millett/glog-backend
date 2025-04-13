@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import WorkoutSerializer, PopulatedWorkoutSerializer
+from .serializers.common import WorkoutSerializer
+from .serializers.populated import PopulatedWorkoutSerializer
 from utils.exceptions import handle_exceptions
 from rest_framework.permissions import IsAuthenticated
 from utils.permissions import IsOwner
