@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'workouts',
     'routines',
     'workout_exercises',
-    'workout_logs'
+    'workout_logs',
+    'exercise_logs'
 ]
 
 MIDDLEWARE = [
