@@ -25,7 +25,6 @@ class ListCreateExerciseView(APIView):
     # Route: POST /exercises/
     @handle_exceptions
     def post(self, request):
-        request.data['owner'] = request.user.id
         new_exercise = ExerciseSerializer(data=request.data)
         new_exercise.is_valid(raise_exception=True)
         new_exercise.save()
