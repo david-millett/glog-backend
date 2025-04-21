@@ -1,0 +1,16 @@
+[
+{
+  "model": "exercises.exercise",
+  "pk": 1,
+  "fields": {
+    "name": "Bench Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 2,
+  "fields": {
+    "name": "Squats"
+  }
+}
+]
