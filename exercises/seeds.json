@@ -12,5 +12,306 @@
   "fields": {
     "name": "Squats"
   }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 3,
+  "fields": {
+    "name": "Overhead Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 4,
+  "fields": {
+    "name": "Deadlifts"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 5,
+  "fields": {
+    "name": "Incline Bench Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 6,
+  "fields": {
+    "name": "Chest Dips"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 7,
+  "fields": {
+    "name": "Standing Arnold Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 8,
+  "fields": {
+    "name": "Press Arounds"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 9,
+  "fields": {
+    "name": "Cross-Body Cable Y-Raises"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 10,
+  "fields": {
+    "name": "Squeeze-Only Pressdowns + Stretch-Only Overhead Extensions"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 11,
+  "fields": {
+    "name": "Cross-Body Tricep Extensions"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 12,
+  "fields": {
+    "name": "Lat Pulldowns"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 13,
+  "fields": {
+    "name": "Omni-Grip Chest-Supported Rows"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 14,
+  "fields": {
+    "name": "Bottom-Half Dumbbell Pullovers"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 15,
+  "fields": {
+    "name": "Omni-Direction Face Pulls"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 16,
+  "fields": {
+    "name": "EZ-Bar Bicep Curls"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 17,
+  "fields": {
+    "name": "Bottom-Half Dumbbell Preacher Curls"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 18,
+  "fields": {
+    "name": "Heavy-Set Squats"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 19,
+  "fields": {
+    "name": "Paused Squats"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 20,
+  "fields": {
+    "name": "Romanian Deadlifts"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 21,
+  "fields": {
+    "name": "Walking Lunges"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 22,
+  "fields": {
+    "name": "Omni-Feet Direction Seated Leg Curls"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 23,
+  "fields": {
+    "name": "Leg Press Omni-Direction Toe Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 24,
+  "fields": {
+    "name": "Decline Plate Crunches"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 25,
+  "fields": {
+    "name": "Machine Shoulder Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 26,
+  "fields": {
+    "name": "Floor Reset Skullcrushers"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 27,
+  "fields": {
+    "name": "Bent-Over Cable Flies"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 28,
+  "fields": {
+    "name": "Machines Lateral Raises"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 29,
+  "fields": {
+    "name": "Plate Front Raises"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 30,
+  "fields": {
+    "name": "Diamond Push Ups"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 31,
+  "fields": {
+    "name": "One-Arm Kneeling Lat Pulldowns"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 32,
+  "fields": {
+    "name": "Pull Ups"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 33,
+  "fields": {
+    "name": "Kroc Rows"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 34,
+  "fields": {
+    "name": "Cable Shrug Ins"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 35,
+  "fields": {
+    "name": "Omni-Grip Reverse Pec Decs"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 36,
+  "fields": {
+    "name": "Overhead Cable Bicep Curls"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 37,
+  "fields": {
+    "name": "Heavy-Set Deadlifts"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 38,
+  "fields": {
+    "name": "Hip Thrusts"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 39,
+  "fields": {
+    "name": "Leg Press"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 40,
+  "fields": {
+    "name": "Single-Leg Romanian Deadlifts"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 41,
+  "fields": {
+    "name": "Slow-Eccentric Leg Extensions"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 42,
+  "fields": {
+    "name": "Seated Calf Raises"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 43,
+  "fields": {
+    "name": "Hanging Leg Raises"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 44,
+  "fields": {
+    "name": "Hip Adduction"
+  }
+},
+{
+  "model": "exercises.exercise",
+  "pk": 45,
+  "fields": {
+    "name": "Hip Abduction"
+  }
 }
 ]
