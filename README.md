@@ -41,29 +41,14 @@ I wanted to experiment more with many-to-many fields in *Django* - and this proj
 
 At every stage, all routes were extensively tested in *Postman* to ensure they were behaving as intended before getting started on the *React* front end.
 
-**Next steps:**
-* create relationships between data
-* add sessions! research best way to store the workout data within
-* create a set of dummy data
+It was at this stage I realised that I needed to really drill down my database plan. I realised that this initial strcture would not function the way I desired, as storing data in arrays does not work for relational SQL databases. So I did more research on SQL databases, read the documentation for Django, and came up with a new, improved data structure:
 
+![Improved ERD](./images/erd-improved.png)
 
-Planning the database took a lot of time - I realised that this initial plan would not function the way I desired, as storing data in arrays does not work for relational SQL databases. So I did some research, read the documentation for Django, etc... used join tables to organise the data instead
+This database seems more complex because it uses many more tables and join tables - but I think this is much more beneficial for consistent storage of the data and improved scalability. I was glad to really drill this down while developing the backend, as I didn't want to move on to the frontend until the database had been properly organised. It was important to me to think and plan the database in a structured way that would enable scaling and limit the possibility for errors or difficulties later down the line.
 
-Plan
+This was also important for the logging aspect of the app to work - I needed to create tables for `workout_logs` and `exercise_logs` to properly preserve and store this data.
 
-Whole structure - routines
-A day in the routine - workouts
-Exercises in the workouts - workout_exercises
+With my database plan finalised, I made changes to the existing models I had made to accommodate this. Then, I created the new ones and made all the required relationships.
 
-The database was quite complex and resulted in much more tables this way - but this was beneficial for consistent storage of the data and improved scalability
-I was glad to really drill this down while developing the backend, as I didn't want to move on to the frontend until the database had been properly organised
-
-This was also important for the logging aspect of the app to work - I needed to create tables for `workout_logs` and `exercise_logs` to properly preserve and store this data
-
-was important to me to think and plan the database in a structured way that would enable scaling and limit the possibility for errors or difficulties later down the line
-
-Next step - I need to create some more apps and edit the ones that already exist!
-
-With my database plan finalised, made changes to the existing models I had made to accommodate this. Then, I created the new ones and made all the required relationships.
-
-Came against an issue with circular error with serializers, so (check logs for wording) separated them into different folders to prevent this. Tested all routes for all apps and populated all fields neede (including reverse populations)
+Throughout this process, I came across an issue with circular error with serializers, so I created serializer folders and separated `common` and `populated` serializers into different files to prevent this. I tested all routes for all apps and populated all fields needed (including reverse populations).
